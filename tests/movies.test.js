@@ -92,7 +92,7 @@ describe("POST /api/movies", () => {
 
       .send(movieWithMissingProps);
 
-    expect(response.status).toEqual(500);
+    expect(response.status).toEqual(422);
   });
 });
 
@@ -170,7 +170,7 @@ describe("PUT /api/movies/:id", () => {
 
       .send(movieWithMissingProps);
 
-    expect(response.status).toEqual(500);
+    expect(response.status).toEqual(422);
   });
   it("should return no movie", async () => {
     const newMovie = {

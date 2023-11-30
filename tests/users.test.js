@@ -94,7 +94,7 @@ describe("POST /api/users", () => {
 
       .send(userWithMissingProps);
 
-    expect(responseUser.status).toEqual(500);
+    expect(responseUser.status).toEqual(422);
   });
 });
 
@@ -172,7 +172,7 @@ describe("PUT /api/users/:id", () => {
 
       .send(userWithMissingProps);
 
-    expect(response.status).toEqual(500);
+    expect(response.status).toEqual(422);
   });
   it("should return no user", async () => {
     const newUser = {
